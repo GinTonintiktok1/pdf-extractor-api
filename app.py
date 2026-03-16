@@ -10,6 +10,12 @@ CORS(app)
 UPLOAD_FOLDER = Path("uploads")
 UPLOAD_FOLDER.mkdir(exist_ok=True)
 
+
+@app.route('/ping', methods=['GET'])
+def ping():
+    return "pong", 200
+ 
+ 
 @app.route("/")
 def index():
     return jsonify({"status": "PDF Extractor API is running ✅"})
